@@ -1,0 +1,3 @@
+rootProject.name = 'OWstats'
+
+include ':app'
