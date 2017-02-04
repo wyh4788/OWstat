@@ -3,6 +3,6 @@
 import React from 'react';
 import { View } from 'react-native';
 
-const Stats = props => (<View></View>);
+const Stats = props => (<View />);
 
 export default Stats;
