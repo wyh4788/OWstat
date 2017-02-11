@@ -1,17 +1,17 @@
 // @flow
+import { connect } from 'react-redux';
+import Stats from '../../components/counter';
 
-import React from 'react';
-import { View, Text, Button } from 'react-native';
-
-
-const Stats = () => (
-  <View style={{ paddingTop: 60 }}>
-    <Text>Wang</Text>
-    <Button
-      title="Increment"
-      onpress={store.dispatch({ type: 'ADD_ONE', increment: 1 })}
-    />
-  </View>
+const incrementNum = (
+  (dispatch) => { dispatch({ type: 'ADD_ONE', increment: 1 }); }
 );
 
-export default Stats;
+const mapStateToProps = state => ({
+  userStats: state.userStats,
+});
+
+const mapDispatchToProps = dispatch => ({
+  incrementNum,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Stats);
