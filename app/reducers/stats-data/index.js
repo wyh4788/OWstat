@@ -3,7 +3,7 @@
 // import actionNames from '../../constants/action-names';
 
 const defaultStatsData = {
-  counter: 0,
+  counter: 1,
 };
 
 export const statsDataReducer = (state = defaultStatsData, action) => {
@@ -12,6 +12,11 @@ export const statsDataReducer = (state = defaultStatsData, action) => {
       return {
         ...state,
         counter: state.counter + action.increment,
+      };
+    case 'MULT_ONE':
+      return {
+        ...state,
+        counter: (state.counter * action.increase),
       };
     default:
       return state;

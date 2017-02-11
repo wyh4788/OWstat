@@ -13,6 +13,10 @@ export default class Stats extends Component {
           title="Increment"
           onPress={this.props.incrementNum}
         />
+        <Button
+          title="Multiply"
+          onPress={this.props.multiplyNum}
+        />
       </View>
     );
   }
