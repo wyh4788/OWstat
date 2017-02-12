@@ -1,26 +1,23 @@
 // @flow
+const defaultStats = {};
 
-// import actionNames from '../../constants/action-names';
-
-const defaultStatsData = {
-  counter: 1,
-};
-
-export const statsDataReducer = (state = defaultStatsData, action) => {
+export const statsReducer = (state = defaultStats, action) => {
   switch (action.type) {
-    case 'ADD_ONE':
+    case 'FETCH_USER_DATA':
       return {
         ...state,
-        counter: state.counter + action.increment,
+        userStats: action.payload,
       };
-    case 'MULT_ONE':
+
+    case 'USER_DATA_SUCCESS':
       return {
         ...state,
-        counter: (state.counter * action.increase),
+        userStats: action.userStats,
       };
+
     default:
       return state;
   }
 };
 
-export default { statsDataReducer };
+export default { statsReducer };

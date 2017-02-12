@@ -1,24 +1,14 @@
 // @flow
 import { connect } from 'react-redux';
+import { fetchUserData } from '../../actions/fetch-user-data/fetch-user-data';
 import Stats from '../../components/counter';
-
-const addNumAction = () => ({
-  type: 'ADD_ONE',
-  increment: 1,
-});
-
-const multiplyNumAction = () => ({
-  type: 'MULT_ONE',
-  increase: 2,
-});
 
 const mapStateToProps = state => ({
   userStats: state.userStats,
 });
 
 const mapDispatchToProps = dispatch => ({
-  incrementNum: () => dispatch(addNumAction()),
-  multiplyNum: () => dispatch(multiplyNumAction()),
+  fetchUserData: userId => dispatch(fetchUserData(userId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Stats);

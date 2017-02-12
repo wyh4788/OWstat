@@ -1,22 +1,30 @@
 // @flow
-
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import {
+  View,
+  Text,
+} from 'react-native';
 
 export default class Stats extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      userId: '',
+      userStats: {},
+    };
+  }
+
+  componentDidMount() {
+    this.props.fetchUserData('DoctorCai-1480');
+  }
+
   render() {
-    const number = this.props.userStats.counter;
+    // console.log(this.props.userStats);
     return (
-      <View style={{ paddingTop: 60 }}>
-        <Text>{number}</Text>
-        <Button
-          title="Increment"
-          onPress={this.props.incrementNum}
-        />
-        <Button
-          title="Multiply"
-          onPress={this.props.multiplyNum}
-        />
+      <View>
+        <Text style={{ paddingTop: 100 }}>Userdata</Text>
+        <Text>{JSON.stringify(this.props.userStats)}</Text>
       </View>
     );
   }
