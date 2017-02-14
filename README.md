@@ -17,6 +17,7 @@ iOS 10 and lower
 - **Redux** (State management)
   - Thunk (Promise-based actions)
   - Logger (Logging middleware)
+- **React Native Router Flux** (Wrapped navigator)
 - **Axios** (HTTP request helper)
 
 ## Lint
