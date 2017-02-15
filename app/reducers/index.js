@@ -2,10 +2,10 @@
 
 import { combineReducers } from 'redux';
 
-import { statsReducer } from './stats-data';
+import { statsDataReducer } from './stats-data';
 
 const reducer = combineReducers({
-  userStats: statsReducer,
+  userStats: statsDataReducer,
 });
 
 export default reducer;

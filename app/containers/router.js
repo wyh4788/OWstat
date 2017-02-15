@@ -8,7 +8,7 @@ export const NavigationRouter = () => (
   <Router>
     <Scene
       key="user-stats"
-      title="Stats"
+      title="OW Stats"
       component={Stats}
     />
   </Router>

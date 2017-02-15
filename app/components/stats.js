@@ -11,7 +11,6 @@ export default class Stats extends Component {
 
     this.state = {
       userId: '',
-      userStats: {},
     };
   }
 
@@ -20,20 +19,10 @@ export default class Stats extends Component {
   }
 
   render() {
-    // console.log(this.props.userStats);
     return (
-<<<<<<< HEAD
       <View>
         <Text style={{ paddingTop: 100 }}>Userdata</Text>
         <Text>{JSON.stringify(this.props.userStats)}</Text>
-=======
-      <View style={{ paddingTop: 60 }}>
-        <Text>{number}</Text>
-        <Button
-          title="Increment"
-          onPress={this.props.incrementNum}
-        />
->>>>>>> parent of a1fc9f5... Add feature: add multiply button
       </View>
     );
   }
