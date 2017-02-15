@@ -2,8 +2,10 @@
 import React, { Component } from 'react';
 import {
   View,
+  ScrollView,
   Text,
 } from 'react-native';
+import styles from './styles';
 
 export default class Stats extends Component {
   constructor(props) {
@@ -20,9 +22,11 @@ export default class Stats extends Component {
 
   render() {
     return (
-      <View>
-        <Text style={{ paddingTop: 100 }}>Userdata</Text>
-        <Text>{JSON.stringify(this.props.userStats)}</Text>
+      <View style={styles.statsContainer}>
+        <ScrollView style={styles.statsView}>
+          <Text>Userdata</Text>
+          <Text>{this.props.userStats.us ? 'yes' : 'no'}</Text>
+        </ScrollView>
       </View>
     );
   }
