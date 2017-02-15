@@ -6,16 +6,10 @@ const defaultStatsData = {};
 export const statsDataReducer = (state = defaultStatsData, action) => {
   switch (action.type) {
     case actionNames.FETCH_USER_DATA:
-      return {
-        ...state,
-        userStats: action.payload,
-      };
+      return action.payload;
 
     case actionNames.USER_DATA_SUCCESS:
-      return {
-        ...state,
-        userStats: action.userStats,
-      };
+      return action.userStats;
 
     default:
       return state;
