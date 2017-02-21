@@ -25,7 +25,7 @@ export default class Stats extends Component {
       <View style={styles.statsContainer}>
         <ScrollView style={styles.statsView}>
           <Text>Userdata</Text>
-          <Text>{this.props.userStats.us ? 'yes' : 'no'}</Text>
+          <Text>{this.props.userStats.us ? 'Data Loaded' : 'Loading...'}</Text>
         </ScrollView>
       </View>
     );
