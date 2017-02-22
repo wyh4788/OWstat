@@ -2,10 +2,9 @@
 import React, { Component } from 'react';
 import {
   View,
-  ScrollView,
+  Button,
   Text,
 } from 'react-native';
-import styles from './styles';
 
 export default class Stats extends Component {
   constructor(props) {
@@ -16,18 +15,22 @@ export default class Stats extends Component {
     };
   }
 
-  componentDidMount() {
-    this.props.fetchUserData('DoctorCai-1480');
-  }
 
   render() {
+    const number = this.props.userStats.counter;
     return (
-      <View style={styles.statsContainer}>
-        <ScrollView style={styles.statsView}>
-          <Text>Userdata</Text>
-          <Text>{this.props.userStats.us ? 'Data Loaded' : 'Loading...'}</Text>
-        </ScrollView>
+      <View style={{ paddingTop: 60 }}>
+        <Text>{number}</Text>
+        <Button
+          title="Increment"
+          onPress={this.props.incrementNum}
+        />
+        <Button
+          title="Multiply"
+          onPress={this.props.multiplyNum}
+        />
       </View>
     );
   }
+
 }
