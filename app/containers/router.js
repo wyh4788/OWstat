@@ -7,9 +7,9 @@ import Stats from './stats/stats';
 import Settings from './settings/settings';
 
 class TabIcon extends React.Component {
-  render(){
+  render() {
     return (
-      <Text style={{color: this.props.selected ? 'red' :'black'}}>{this.props.title}</Text>
+      <Text style={{ color: this.props.selected ? 'red' : 'black' }}>{this.props.title}</Text>
     );
   }
 }

@@ -2,21 +2,20 @@
 // import actionNames from '../../constants/action-names';
 
 const defaultStatsData = {
-  counter: 1,
+
 };
 
 export const statsDataReducer = (state = defaultStatsData, action) => {
   switch (action.type) {
-    case 'ADD_ONE':
+    case 'FETCH_SUCCESS':
       return {
         ...state,
-        counter: state.counter + action.increment,
+        userStats: action.payload,
       };
-
-    case 'MULT_ONE':
+    case 'FETCH_FAIL':
       return {
         ...state,
-        counter: (state.counter * action.increase),
+        userStats: action.payload,
       };
 
     default:

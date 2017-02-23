@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import {
   View,
-  Button,
   Text,
 } from 'react-native';
 
@@ -15,20 +14,15 @@ export default class Stats extends Component {
     };
   }
 
+  componentDidMount() {
+    this.props.fetchInfo('DoctorCai-1480');
+  }
 
   render() {
-    const number = this.props.userStats.counter;
     return (
       <View style={{ paddingTop: 60 }}>
-        <Text>{number}</Text>
-        <Button
-          title="Increment"
-          onPress={this.props.incrementNum}
-        />
-        <Button
-          title="Multiply"
-          onPress={this.props.multiplyNum}
-        />
+        <Text>UserData</Text>
+        <Text>{JSON.stringify(this.props.userStats)}</Text>
       </View>
     );
   }
