@@ -6,13 +6,9 @@ import { Scene, Router } from 'react-native-router-flux';
 import Stats from './stats/stats';
 import Settings from './settings/settings';
 
-class TabIcon extends React.Component {
-  render(){
-    return (
-      <Text style={{color: this.props.selected ? 'red' :'black'}}>{this.props.title}</Text>
-    );
-  }
-}
+const TabIcon = () => (
+  <Text style={{ color: this.props.selected ? 'red' : 'black' }}>{this.props.title}</Text>
+);
 
 export const NavigationRouter = () => (
   <Router>
