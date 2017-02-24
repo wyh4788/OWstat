@@ -1,6 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import {
+  ActivityIndicator,
   View,
   ScrollView,
   Text,
@@ -21,11 +22,21 @@ export default class Stats extends Component {
   }
 
   render() {
+    const { stats, heroes, achievements } = this.props.userStats;
+
+    if (!stats) {
+      return (
+        <View style={styles.statsContainer}>
+          <ActivityIndicator style={styles.spinner} size="large" />
+        </View>
+      );
+    }
+
+
     return (
       <View style={styles.statsContainer}>
         <ScrollView style={styles.statsView}>
-          <Text>Userdata</Text>
-          <Text>{this.props.userStats.us ? 'Data Loaded' : 'Loading...'}</Text>
+          <Text>Userdata Loaded</Text>
         </ScrollView>
       </View>
     );

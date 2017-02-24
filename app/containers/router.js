@@ -6,8 +6,10 @@ import { Scene, Router } from 'react-native-router-flux';
 import Stats from './stats/stats';
 import Settings from './settings/settings';
 
-const TabIcon = () => (
-  <Text style={{ color: this.props.selected ? 'red' : 'black' }}>{this.props.title}</Text>
+const TabIcon = props => (
+  <Text style={{ color: props.selected ? 'red' : 'black' }}>
+    {props.title}
+  </Text>
 );
 
 export const NavigationRouter = () => (
@@ -23,8 +25,8 @@ export const NavigationRouter = () => (
         icon={TabIcon}
       />
       <Scene
-        key="hero-stats"
-        title="Hero Stats"
+        key="other-user-stats"
+        title="User Stats"
         component={Stats}
         icon={TabIcon}
       />

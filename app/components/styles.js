@@ -9,4 +9,9 @@ export default StyleSheet.create({
   statsView: {
     flex: 1,
   },
+  spinner: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+  }
 });
