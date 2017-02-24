@@ -5,6 +5,7 @@ import {
   View,
   ScrollView,
   Text,
+  Image,
 } from 'react-native';
 import styles from './styles';
 
@@ -30,15 +31,32 @@ export default class Stats extends Component {
           <ActivityIndicator style={styles.spinner} size="large" />
         </View>
       );
+    } else {
+      const {
+        avatar,
+        level,
+        games,
+        losses,
+        wins,
+        ties,
+        comprank,
+        win_rate
+      } = stats.competitive.overall_stats
+
+      return (
+        <View style={styles.statsContainer}>
+          <ScrollView contentContainerStyle={styles.statsView}>
+            <Image
+              style={styles.avatar}
+              source={{
+                uri: avatar,
+              }}
+            />
+            <Text>Level: {level}</Text>
+            <Text>Rank: {comprank}</Text>
+          </ScrollView>
+        </View>
+      );
     }
-
-
-    return (
-      <View style={styles.statsContainer}>
-        <ScrollView style={styles.statsView}>
-          <Text>Userdata Loaded</Text>
-        </ScrollView>
-      </View>
-    );
   }
 }

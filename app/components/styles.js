@@ -4,14 +4,20 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
   statsContainer: {
     flex: 1,
-    paddingTop: 64,
+    paddingTop: 20,
+    paddingBottom: 50,
   },
   statsView: {
-    flex: 1,
+    alignItems: 'center',
   },
   spinner: {
     alignItems: 'center',
     justifyContent: 'center',
     flex: 1,
-  }
+  },
+  avatar: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+  },
 });

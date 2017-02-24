@@ -23,6 +23,7 @@ export const NavigationRouter = () => (
         title="My Stats"
         component={Stats}
         icon={TabIcon}
+        hideNavBar
       />
       <Scene
         key="other-user-stats"
